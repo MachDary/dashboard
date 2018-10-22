@@ -25,7 +25,7 @@ class Show extends BaseShow {
     if (item) {
       const confirmation = this.props.highestBlock - item.blockHeight + 1
       const nativeAssetInput = item.inputs.reduce((sum, input) => {
-        if (input.type === 'spend' && input.assetId === NativeAssetID) {
+        if ((input.type === 'spend' || input.type === 'withdrawal') && input.assetId === NativeAssetID) {
           sum += input.amount
         }
         return sum
@@ -34,7 +34,7 @@ class Show extends BaseShow {
       item.confirmations = confirmation
 
       const nativeAssetOutput = item.outputs.reduce((sum, output) => {
-        if (output.type === 'control' && output.assetId === NativeAssetID) {
+        if ((output.type === 'control' || output.type === 'deposit') && output.assetId === NativeAssetID) {
           sum += output.amount
         }
         return sum

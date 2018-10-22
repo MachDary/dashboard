@@ -114,6 +114,8 @@ class AdvancedTxForm extends React.Component {
               <MenuItem eventKey='create_contract'>{lang === 'zh' ? '创建合约' : 'Create contract'}</MenuItem>
               <MenuItem eventKey='sendto_contract'>{lang === 'zh' ? '执行合约交易' : 'Send to contract'}</MenuItem>
               <MenuItem eventKey='set_transaction_reference_data'>{lang === 'zh' ? '设置交易引用数据' : 'Set transaction reference data'}</MenuItem>
+              <MenuItem eventKey='deposit'>{lang === 'zh' ? '存储' : 'Deposit'}</MenuItem>
+              <MenuItem eventKey='withdraw'>{lang === 'zh' ? '提取' : 'Withdraw'}</MenuItem>
             </DropdownButton>
           </div>
         </FormSection>

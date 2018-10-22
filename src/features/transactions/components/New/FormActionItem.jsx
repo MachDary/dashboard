@@ -12,6 +12,8 @@ const RETIRE_ASSET_KEY = 'retire'
 const CREATE_CONTRACT_KEY = 'create_contract'
 const SENDTO_CONTRACT_KEY = 'sendto_contract'
 const TRANSACTION_REFERENCE_DATA = 'set_transaction_reference_data'
+const DEPOSIT = 'deposit'
+const WITHDRAW = 'withdraw'
 
 const actionLabels = {
   [ISSUE_KEY]: 'Issue',
@@ -23,6 +25,8 @@ const actionLabels = {
   [CREATE_CONTRACT_KEY]: 'Create contract',
   [SENDTO_CONTRACT_KEY]: 'Send to contract',
   [TRANSACTION_REFERENCE_DATA]: 'Set transaction reference data',
+  [DEPOSIT]: 'Deposit',
+  [WITHDRAW]: 'Withdraw',
 }
 
 const actionLabels_zh = {
@@ -35,6 +39,8 @@ const actionLabels_zh = {
   [CREATE_CONTRACT_KEY]: '创建合约',
   [SENDTO_CONTRACT_KEY]: '执行合约交易',
   [TRANSACTION_REFERENCE_DATA]: '设置交易引用数据',
+  [DEPOSIT]: '存储',
+  [WITHDRAW]: '提取',
 }
 
 const visibleFields = {
@@ -47,6 +53,8 @@ const visibleFields = {
   [CREATE_CONTRACT_KEY]: {account: true, from: true, input: true},
   [SENDTO_CONTRACT_KEY]: {account: true, from: true, input: true, to: true},
   [TRANSACTION_REFERENCE_DATA]: {},
+  [DEPOSIT]: {asset: true, address: true, amount: true},
+  [WITHDRAW]: {asset: true, account: true, address: true, amount: true},
 }
 
 export default class ActionItem extends React.Component {
